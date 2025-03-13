@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun, Mama!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #ffccff, #ff99cc);
+            color: #ff0066;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 36px;
+            color: #d1005c;
+        }
+        p {
+            font-size: 18px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 20px auto;
+            max-width: 300px;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        .countdown {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            background: #ff3385;
+            color: white;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .message {
+            background: white;
+            color: #ff0066;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Selamat Ulang Tahun, Mama! 🎉</h1>
+    <p>Aku sangat bersyukur memiliki Mama dalam hidupku ❤</p>
+
+    <!-- Galeri Foto -->
+    <div class="gallery">
+        <img src="https://raw.githubusercontent.com/nadzar18/mama/refs/heads/main/foto1.jpg" alt="Foto 1">
+        <img src="https://raw.githubusercontent.com/nadzar18/mama/refs/heads/main/foto2.jpg" alt="Foto 2">
+        <img src="https://raw.githubusercontent.com/nadzar18/mama/refs/heads/main/foto4.jpg" alt="Foto 3">
+        <img src="https://raw.githubusercontent.com/nadzar18/mama/refs/heads/main/foto5.jpg" alt="Foto 4">
+        <img src="https://raw.githubusercontent.com/nadzar18/mama/refs/heads/main/foto1.jpg" alt="Foto 5">
+        <img src="https://raw.githubusercontent.com/nadzar18/mama/refs/heads/main/foto6.jpg" alt="Foto 6">
+    </div>
+
+    <!-- Hitung Mundur Ulang Tahun -->
+    <div class="countdown">
+        <h2>Menuju Ulang Tahun Mama:</h2>
+        <p id="timer"></p>
+    </div>
+
+    <!-- Kata-kata Spesial untuk Mama -->
+    <div class="message">
+        Mama, terima kasih atas segala cinta dan pengorbananmu.  
+        Aku beruntung memiliki Mama yang luar biasa sepertimu.  
+        Semoga Mama selalu sehat, bahagia, dan diberkahi setiap harinya.  
+        Aku mencintaimu ❤
+    </div>
+
+    <script>
+        // Countdown Timer
+        const birthday = new Date(2025, 6, 4, 0, 0, 0).getTime();
+
+        function updateTimer() {
+            let now = new Date().getTime();
+            let timeLeft = birthday - now;
+
+            let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById("timer").innerHTML = ${days}d ${hours}h ${minutes}m ${seconds}s;
+        }
+
+        setInterval(updateTimer, 1000);
+    </script>
+
+</body>
+</html>
